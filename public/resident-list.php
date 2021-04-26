@@ -16,13 +16,19 @@ $articleList = $newsArticle->getList(
 var_dump($articleList);die;
 */
 
-$residentList = $resident->getList(
-    (isset($_GET['firstName']) ? $_GET['firstName'] : null)
-    // (isset($_GET['middleName']) ? $_GET['middleName'] : null),
-    // (isset($_GET['lastName']) ? $_GET['lastName'] : null)
-);
+// $burialList = $resident->getList(
+//     (isset($_GET['firstName']) ? $_GET['firstName'] : null)
+//     // (isset($_GET['middleName']) ? $_GET['middleName'] : null),
+//     // (isset($_GET['lastName']) ? $_GET['lastName'] : null)
+// );
+//$burialList = array();var_dump($_POST);
+$residentList= $resident->getList(
+    (isset($_POST['firstName']) ? $_POST['firstName'] : null),
+    (isset($_POST['lastName']) ? $_POST['lastName'] : null),
+    (isset($_POST['deathYear']) ? $_POST['deathYear'] : null)
+    );
+//$burialList = $resident->burialsData;var_dump($burialList);
+//var_dump($burialList);
 
-//var_dump($articleList);
-
-require_once("../tpl/article-list.tpl.php");
+require_once("../tpl/resident-list.tpl.php");
 ?>
