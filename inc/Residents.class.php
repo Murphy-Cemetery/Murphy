@@ -821,56 +821,31 @@ class Residents {
             }
         }
 
-
         function getList(
-            $firstName = null
-            // $middleName = null,
-            // $lastName = null
+            $firstName  = null,
+            $lastName = null,
+            $deathYear = null
         ) {
            
             $burialList = array();
             //var_dump($page,$filterColumn);
             // TODO: get the news articles and store into $articleList
            
-            $sql = "SELECT * FROM cemetery-burials WHERE burials-first-name LIKE ?";
-            $stmt->execute(array($firstName));
+            $sql = "SELECT * FROM cemetery_burials WHERE burials_first_name LIKE ? AND burials_last_name LIKE ?";
+            if ($deathYear != "") 
+                $sql .= ' AND burials_death_year LIKE ?';
+            $stmt = $this->db->prepare($sql);//var_dump($deathYear);
+
+            if ($deathYear != "") 
+                $stmt->execute(array('%'.$firstName.'%','%'.$lastName.'%','%'.$deathYear.'%'));
+            else 
+                $stmt->execute(array('%'.$firstName.'%','%'.$lastName.'%'));//var_dump($stmt->rowCount());
+//var_dump($deathYear);
             if ($stmt->rowCount() >= 1) {
                 $burialList = $stmt->fetchAll(PDO::FETCH_ASSOC);
             }
-            return $burialList;
-
-            // if (isset($firstName)) {
-            //     $sql .= " WHERE burials-first-name LIKE ?";
-            //     if (isset($middleName)) {
-            //         $sql .= " AND burials-middle-name LIKE ?";
-            //     }
-            //     if (isset($lastName)) {
-            //         $sql .= " AND burials-last-name LIKE ?";
-            //     }
-            // } else {
-            //     if (isset($middleName)) {
-            //         $sql .= " WHERE burials-middle-name LIKE ?";
-            //         if (isset($lastName)) {
-            //             $sql .= " AND burials-last-name LIKE ?";
-            //         }
-            //     } else 
-            //         if ((isset($lastName)) {
-            //             $sql .= " WHERE burials-last-name LIKE ?";
-            //         }
-            // }
-    
-            
-           
-            $stmt = $this->db->prepare($sql);
-            
-            //$stmt->execute();
-            
-                
-                $burialList = $stmt->fetchAll(PDO::FETCH_ASSOC);//var_dump(($userList));
-            
-                   
-            // return the list of residents
-            return $burialList;        
+            return $burialList; // return the list of residents
+         
         }
 
         function saveImage($fileArray) {
