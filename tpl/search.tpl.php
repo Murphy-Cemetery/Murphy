@@ -1,18 +1,24 @@
-
+<?php 
+    session_cache_limiter('none');  //This prevents a Chrome error when using the back button to return to this page.
+    session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style>
+ 
+
+</style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <title>Murphy Cemetery</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <link href="../css/about.css" rel="stylesheet" type="text/css">
+    <link href="../public/css/about.css" rel="stylesheet" type="text/css">
 <style>
     h1 {
         padding:2em;
@@ -34,9 +40,9 @@
             text-align:center;
         }
 </style>
+    
 </head>
 <body>
-
 <nav class="navbar navbar-expand-lg navbar-light sticky-top">
 
 <a class="navbar-brand col-9 ml-3" href="index.html"><span class="navWhiteHead">Murphy Cemetery</span></a>
@@ -51,7 +57,7 @@
             <a class="nav-link" href="../index.html"><span class="navWhite">Home</span></a>
         </li>
         <li class="nav-item active pr-2">
-            <a class="nav-link" href="../.public/about.html"><span class="navWhite">About</span></a>
+            <a class="nav-link" href="../public/about.html"><span class="navWhite">About</span></a>
         </li>
         <li class="nav-item pr-2">
             <a class="nav-link" href="../public/contact.php"><span class="navWhite">Contact</span></a>
@@ -62,15 +68,8 @@
     </ul>
 </div>
 </nav>
-r
 
 <h1>Search Cemetery</h1>
-<form action="resident-list.php" method ="post" >  
-            <input type ="text" name="fNameSearch" id="fNameSearch" label="First Name search" placeholder="First Name">
-            <input type ="text" name="mNameSearch" id="mNameSearch" label="Middle Name search" placeholder="Middle Name">
-            <input type ="text" name="lNameSearch" id="lNameSearch" label="Last Name search" placeholder="Last Name">
-            <input type="submit"  id = "search" value="Search"><span></span>     <!--  search bar -->
-        </form>
 <?php if (isset($_SESSION['validUser'])) { 
                 if ($_SESSION['validUser']) { ?>
                     <div id="logout">
