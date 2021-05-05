@@ -1,6 +1,4 @@
 <?php
-session_cache_limiter('none');  //This prevents a Chrome error when using the back button to return to this page.
-session_start();
 require_once('../inc/Residents.class.php');
 
 $resident = new Residents();
@@ -18,6 +16,7 @@ $articleList = $newsArticle->getList(
 var_dump($articleList);die;
 */
 
+
 // $burialList = $resident->getList(
 //     (isset($_GET['firstName']) ? $_GET['firstName'] : null)
 //     // (isset($_GET['middleName']) ? $_GET['middleName'] : null),
@@ -32,5 +31,6 @@ $residentList= $resident->getList(
 //$burialList = $resident->residentData;var_dump($burialList);
 //var_dump($burialList);
 
-require_once("../tpl/resident-list.tpl.php");
+
+require_once("../tpl/article-list.tpl.php");
 ?>
