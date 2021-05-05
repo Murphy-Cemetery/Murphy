@@ -36,6 +36,9 @@
         padding:1em;
         border-radius:15px;
     }
+    #logout {
+            text-align:center;
+        }
 </style>
     
 </head>
@@ -67,6 +70,13 @@
 </nav>
 
 <h1>Search Cemetery</h1>
+<?php if (isset($_SESSION['validUser'])) { 
+                if ($_SESSION['validUser']) { ?>
+                    <div id="logout">
+                        <button><a href="../public/logout.php">Logout of system</a></button>
+                    </div>
+            <?php }} ?>
+
 <form action="../public/resident-list.php" method ="post" >  
     <div class="form-group">
         <p><label for="floatName">FIRST NAME:</label></p>
@@ -90,7 +100,8 @@
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12 mb-2 mt-2">
                 <center>
-                    <a href="login.php" target="_blank">Login</a>
+                <?php  if (!isset($_SESSION['validUser'])) {?>
+                    <a href="../public/login.php" >Login</a> <?php } ?>
                 </center>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
