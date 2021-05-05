@@ -29,7 +29,7 @@ $residentList= $resident->getList(
     (isset($_POST['lastName']) ? $_POST['lastName'] : null),
     (isset($_POST['deathYear']) ? $_POST['deathYear'] : null)
     );
-//$burialList = $resident->burialsData;var_dump($burialList);
+//$burialList = $resident->residentData;var_dump($burialList);
 //var_dump($burialList);
 
 require_once("../tpl/resident-list.tpl.php");

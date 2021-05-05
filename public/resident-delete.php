@@ -17,7 +17,7 @@ if (isset($_POST['deleteResident']) )	{  //var_dump($deleteRecID);die;
 } else {
     $residentDataArray = array();
     $resident->load($deleteRecID);
-    $residentDataArray = $resident->burialsData;
+    $residentDataArray = $resident->residentData;
 }
 
 require_once('../tpl/resident-delete.tpl.php');
