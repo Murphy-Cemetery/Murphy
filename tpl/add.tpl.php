@@ -1,7 +1,16 @@
 <html>
 <head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link href="../css/about.css" rel="stylesheet" type="text/css">
+
 	<meta charset="utf-8">
 	<title>Add Grave</title>
 	<style>
@@ -165,6 +174,31 @@
 	</script>
 </head>
 <body onLoad="bodyInit()">
+<nav class="navbar navbar-expand-lg navbar-light sticky-top">
+
+<a class="navbar-brand col-9 ml-3" href="index.html"><span class="navWhiteHead">Murphy Cemetery</span></a>
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	<span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse mr-2" id="navbarNav">
+	<ul class="navbar-nav">
+		<li class="nav-item pr-2">
+			<a class="nav-link" href="index.html"><span class="navWhite">Home</span></a>
+		</li>
+		<li class="nav-item active pr-2">
+			<a class="nav-link" href="about.html"><span class="navWhite">About</span></a>
+		</li>
+		<li class="nav-item pr-2">
+			<a class="nav-link" href="contact.php"><span class="navWhite">Contact</span></a>
+		</li>
+		<li class="nav-item pr-2">
+			<a class="nav-link" href="#"><span class="navWhite">Search</span></a>
+		</li>
+	</ul>
+</div>
+</nav>
 	<div class = "title">Add New Deceased</div>
 	<div id = "container" class = "container-fluid">
 		<form action ="" method="post" enctype="multipart/form-data">
@@ -547,6 +581,25 @@
 			</div>
 		</form>
 	</div>
+    <footer>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 mb-2 mt-2">
+                <center>
+                    <a href="login.php" target="_blank">Login</a>
+                </center>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
+                <center>
+                    <p>&copy; Copywrite Murphy Cemetery <script> new Date().getFullYear()</script></p>
+                </center>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
+                <center>
+                    <p>Nevada, IA 50201</p>
+                </center>
+            </div>
+        </div>
+    </footer>
 	
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
