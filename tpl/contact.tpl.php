@@ -32,7 +32,7 @@
                 <a class="nav-link" href="contact.php"><span class="navWhite">Contact</span></a>
             </li>
             <li class="nav-item pr-2">
-                <a class="nav-link" href="#"><span class="navWhite">Search</span></a>
+                <a class="nav-link" href="../public/search.php"><span class="navWhite">Search</span></a>
             </li>
         </ul>
     </div>
@@ -84,7 +84,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12 mb-2 mt-2">
                 <center>
-                    <a href="login.php" target="_blank">Login</a>
+                    <a href="../public/login.php" target="_blank">Login</a>
                 </center>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
