@@ -31,7 +31,6 @@ if (isset($_REQUEST['burialsID']) && $_REQUEST['burialsID'] > 0) {
     $residentDataArray = $resident->residentData;
     $resident->oldResidentData = $resident->residentData;
     $st = $resident->residentData['burials_birthplace_state'];
-    var_dump($residentDataArray);
 
 }
 
