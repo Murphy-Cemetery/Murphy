@@ -29,5 +29,4 @@ else
       
     require_once('../tpl/login.tpl.php');
   ?>
-  
-  
+
