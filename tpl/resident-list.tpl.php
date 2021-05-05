@@ -16,17 +16,16 @@
         text-align:center;
     }
         .resident {
-
-
             background-color:#8d8e79;
-            width:50%;
-            
-          
+            width:50%;  
             margin:2em auto;
             display:flex;
             align-items:center;
             justify-content:center;
             flex-direction:column;
+        }
+        .center {
+            text-align:center;
         }
     </style>
 <body>
@@ -55,8 +54,14 @@
             </ul>
         </div>
     </nav>
-
+   
     <h1>Results</h1>
+    <?php if (isset($_SESSION['validUser'])) { 
+                if ($_SESSION['validUser']) { ?>
+                    <div class="center">
+                        <button><a href="logout.php">Logout of system</a></button>
+                    </div>
+            <?php }} ?>
 <?php 
  foreach ($residentList as $burialsData) 
     { ?>
@@ -66,14 +71,21 @@
             <h3>Last Name:<?php if(isset($burialsData['burials_last_name'])) echo ($burialsData['burials_last_name'].' ');?></h3>
             <h3>Day of Death:<?php if(isset($burialsData['burials_date_of_death'])) echo ($burialsData['burials_date_of_death'].' ');?></h3>
 
+            <?php  if (isset($_SESSION['validUser'])) { 
+                        if ($_SESSION['validUser']) { ?>
+                            <p><button><a href="resident-edit.php?faqID=<?php echo $burialsData['burials_id']; ?>">Edit</a></button>
+                            <button><a href="resident-delete.php?deleteID=<?php echo $burialsData['burials_id']; ?>">Delete</a></button></p>
+                    <?php }} ?>
         </div> 
     <?php } ?>
+    <p class="center"><a href="../tpl/search.tpl.php" id="deleted">Back to Search</a></p>
 
     <footer>
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12 mb-2 mt-2">
                 <center>
-                    <a href="login.php" target="_blank">Login</a>
+                <?php  if (!isset($_SESSION['validUser'])) {?>
+                    <a href="../public/login.php" >Login</a> <?php } ?>
                 </center>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 mt-2">
