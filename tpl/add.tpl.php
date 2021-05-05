@@ -185,7 +185,7 @@
 <div class="collapse navbar-collapse mr-2" id="navbarNav">
 	<ul class="navbar-nav">
 		<li class="nav-item pr-2">
-			<a class="nav-link" href="index.html"><span class="navWhite">Home</span></a>
+			<a class="nav-link" href="../index.html"><span class="navWhite">Home</span></a>
 		</li>
 		<li class="nav-item active pr-2">
 			<a class="nav-link" href="about.html"><span class="navWhite">About</span></a>
@@ -194,7 +194,7 @@
 			<a class="nav-link" href="contact.php"><span class="navWhite">Contact</span></a>
 		</li>
 		<li class="nav-item pr-2">
-			<a class="nav-link" href="#"><span class="navWhite">Search</span></a>
+			<a class="nav-link" href="resident-list.php"><span class="navWhite">Search</span></a>
 		</li>
 	</ul>
 </div>
