@@ -5,7 +5,8 @@ class Residents {
     var $errors = array();          // for errors
     var $db = null;
     var $errMessage ="";
-    var $message ="";
+    var $message = ""; 
+    
 
 
 
@@ -19,16 +20,16 @@ class Residents {
     function set($dataArray)
     {
         $this->residentData = $dataArray;
+
     }
 
-    function logout() {
-        session_start();	//provide access to the current session
-        session_unset();	//remove all session variables related to current session
-        session_destroy();	//remove current session
-        $this->message = "You were logged out.";
-    }// end logout
-
-
+    function deleteResident($burialID) {   
+        $stmt = $this->db->prepare("DELETE FROM cemetery_burials WHERE burials_id = ?");//var_dump($burialID);var_dump($this->message);
+        if ($stmt->execute(array($burialID)))
+            {$this->message= "The resident has been deleted.";}
+        else {$this->errMessage="Error, resident not deleted.";}
+        
+    }
 
     function login($userName,$userPW) {
         $stmt = $this->db->prepare("SELECT * FROM admin WHERE user_name = ? AND user_password = ?");
@@ -38,8 +39,8 @@ class Residents {
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             $row = $stmt->fetch();
             
-            if ($row['user_name'] === $userName) {
-                //$_SESSION['user'] = $row['user_Id'];				//this is a valid user so set your SESSION variable
+            if ($row['user_name'] === $userName) {				//this is a valid user so set your SESSION variable
+
                 $_SESSION['validUser'] = true;	
                 $this->message = "Welcome Back! $userName";	
             }
