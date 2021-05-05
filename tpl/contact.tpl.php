@@ -32,7 +32,7 @@
                 <a class="nav-link" href="contact.php"><span class="navWhite">Contact</span></a>
             </li>
             <li class="nav-item pr-2">
-                <a class="nav-link" href="search.tpl.php"><span class="navWhite">Search</span></a>
+                <a class="nav-link" href="../tpl/search.tpl.php"><span class="navWhite">Search</span></a>
             </li>
         </ul>
     </div>
