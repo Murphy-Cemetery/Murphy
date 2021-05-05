@@ -101,6 +101,8 @@
             <div class="col-lg-4 col-md-4 col-sm-12 mb-2 mt-2">
                 <center>
                 <?php  if (!isset($_SESSION['validUser'])) {?>
+                    <a href="../public/login.php" >Login</a> <?php } 
+                    else   if (!($_SESSION['validUser']))  {?>
                     <a href="../public/login.php" >Login</a> <?php } ?>
                 </center>
             </div>
