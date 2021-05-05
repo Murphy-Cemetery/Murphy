@@ -37,6 +37,33 @@
 </head>
 <body>
 
+<nav class="navbar navbar-expand-lg navbar-light sticky-top">
+
+<a class="navbar-brand col-9 ml-3" href="index.html"><span class="navWhiteHead">Murphy Cemetery</span></a>
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse mr-2" id="navbarNav">
+    <ul class="navbar-nav">
+        <li class="nav-item pr-2">
+            <a class="nav-link" href="../index.html"><span class="navWhite">Home</span></a>
+        </li>
+        <li class="nav-item active pr-2">
+            <a class="nav-link" href="../.public/about.html"><span class="navWhite">About</span></a>
+        </li>
+        <li class="nav-item pr-2">
+            <a class="nav-link" href="../public/contact.php"><span class="navWhite">Contact</span></a>
+        </li>
+        <li class="nav-item pr-2">
+            <a class="nav-link" href="search.tpl.php"><span class="navWhite">Search</span></a>
+        </li>
+    </ul>
+</div>
+</nav>
+r
+
 <h1>Search Cemetery</h1>
 <form action="resident-list.php" method ="post" >  
             <input type ="text" name="fNameSearch" id="fNameSearch" label="First Name search" placeholder="First Name">

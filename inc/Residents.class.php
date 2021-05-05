@@ -2,6 +2,7 @@
 class Residents {
     var $residentData = array();    // hold data from array
     var $oldResidentData = array();
+
     var $errors = array();          // for errors
     var $db = null;
     var $errMessage ="";
@@ -20,15 +21,16 @@ class Residents {
     function set($dataArray)
     {
         $this->residentData = $dataArray;
-
     }
+
+
+
 
     function deleteResident($burialID) {   
         $stmt = $this->db->prepare("DELETE FROM cemetery_burials WHERE burials_id = ?");//var_dump($burialID);var_dump($this->message);
         if ($stmt->execute(array($burialID)))
             {$this->message= "The resident has been deleted.";}
         else {$this->errMessage="Error, resident not deleted.";}
-        
     }
 
     function login($userName,$userPW) {
@@ -115,11 +117,11 @@ class Residents {
             // check to see if we loaded the article
             if ($stmt->rowCount() == 1) {
                 // if we did load the article, fetch the data as a keyed array
-                $burialsData = $stmt->fetch(PDO::FETCH_ASSOC);
+                $residentData = $stmt->fetch(PDO::FETCH_ASSOC);
                 //var_dump($dataArray);
                 
                 // set the data to our internal property            
-                $this->set($burialsData);
+                $this->set($residentData);
                             
                 // set the success flag to true
                 $isLoaded = true;

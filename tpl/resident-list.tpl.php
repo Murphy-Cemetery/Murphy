@@ -43,10 +43,10 @@
                     <a class="nav-link" href="../index.html"><span class="navWhite">Home</span></a>
                 </li>
                 <li class="nav-item active pr-2">
-                    <a class="nav-link" href="../about.html"><span class="navWhite">About</span></a>
+                    <a class="nav-link" href="../public/about.html"><span class="navWhite">About</span></a>
                 </li>
                 <li class="nav-item pr-2">
-                    <a class="nav-link" href="../contact.php"><span class="navWhite">Contact</span></a>
+                    <a class="nav-link" href="../public/contact.php"><span class="navWhite">Contact</span></a>
                 </li>
                 <li class="nav-item pr-2">
                     <a class="nav-link" href="search.tpl.php"><span class="navWhite">Search</span></a>
@@ -63,18 +63,18 @@
                     </div>
             <?php }} ?>
 <?php 
- foreach ($residentList as $burialsData) 
+ foreach ($residentList as $residentData) 
     { ?>
         <div class="resident">
-            <h3>First Name: <?php if(isset($burialsData['burials_first_name'])) echo ($burialsData['burials_first_name'].' ');?></h3>
-            <h3>Middle Name:<?php if(isset($burialsData['burials_middle_name'])) echo ($burialsData['burials_middle_name'].' ');?></h3>
-            <h3>Last Name:<?php if(isset($burialsData['burials_last_name'])) echo ($burialsData['burials_last_name'].' ');?></h3>
-            <h3>Day of Death:<?php if(isset($burialsData['burials_date_of_death'])) echo ($burialsData['burials_date_of_death'].' ');?></h3>
+            <h3>First Name: <?php if(isset($residentData['burials_first_name'])) echo ($residentData['burials_first_name'].' ');?></h3>
+            <h3>Middle Name:<?php if(isset($residentData['burials_middle_name'])) echo ($residentData['burials_middle_name'].' ');?></h3>
+            <h3>Last Name:<?php if(isset($residentData['burials_last_name'])) echo ($residentData['burials_last_name'].' ');?></h3>
+            <h3>Day of Death:<?php if(isset($residentData['burials_date_of_death'])) echo ($residentData['burials_date_of_death'].' ');?></h3>
 
             <?php  if (isset($_SESSION['validUser'])) { 
                         if ($_SESSION['validUser']) { ?>
-                            <p><button><a href="resident-edit.php?faqID=<?php echo $burialsData['burials_id']; ?>">Edit</a></button>
-                            <button><a href="resident-delete.php?deleteID=<?php echo $burialsData['burials_id']; ?>">Delete</a></button></p>
+                            <p><button><a href="add.php?burialsID=<?php echo $residentData['burials_id']; ?>">Edit</a></button>
+                            <button><a href="resident-delete.php?deleteID=<?php echo $residentData['burials_id']; ?>">Delete</a></button></p>
                     <?php }} ?>
         </div> 
     <?php } ?>
