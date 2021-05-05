@@ -540,7 +540,7 @@ class Residents {
                                 $isValid = false;
                                 $this->errors['burials_plot_row'] = "5 character limit";
                             } else {
-                                if ($this->errors['burials_plot_row'] < 1){
+                                if ($this->residentData['burials_plot_row'] < 1){
                                     //no negatives
                                     $isValid = false;
                                     $this->errors['burials_plot_row'] = "no negative numbers";
@@ -566,7 +566,7 @@ class Residents {
                                 $isValid = false;
                                 $this->errors['burials_plot_number'] = "5 character limit";
                             } else {
-                                if ($this->errors['burials_plot_number'] < 1){
+                                if ($this->residentData['burials_plot_number'] < 1){
                                     //no negatives
                                     $isValid = false;
                                     $this->errors['burials_plot_number'] = "no negative numbers";
