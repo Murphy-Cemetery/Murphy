@@ -117,7 +117,7 @@
                     <h3>Birth</h3>
                     <div class = "row">
                             <div class = "col-lg-6 col-md-6 col-sm-12">
-                                <p>Date Of Birth: <?php if (isset($residentDataArray['burials_dob']) && !$residentDataArray['burials_dob']  === '0000-00-00'){echo $residentDataArray['burials_dob'];}?></p>
+                                <p>Date Of Birth: <?php if (isset($residentDataArray['burials_dob']) && $residentDataArray['burials_dob']  != '0000-00-00'){echo $residentDataArray['burials_dob'];}?></p>
                             </div>
                             <div class = "col-lg-6 col-md-6 col-sm-12">
                                 <p>Year of Birth: <?php if (isset($residentDataArray['burials_birth_year']) && $residentDataArray['burials_birth_year'] > 0){echo $residentDataArray['burials_birth_year'];}?></p>
@@ -139,7 +139,7 @@
                     <h3>Death</h3>
                     <div class = "row">
                             <div class = "col-lg-6 col-md-6 col-sm-12">
-                                <p>Date Of Death: <?php if (isset($residentDataArray['burials_date_of_death']) && !$residentDataArray['burials_date_of_death']  === '0000-00-00'){echo $residentDataArray['burials_date_of_death'];}?></p>
+                                <p>Date Of Death: <?php if (isset($residentDataArray['burials_date_of_death']) && $residentDataArray['burials_date_of_death']  != '0000-00-00'){echo $residentDataArray['burials_date_of_death'];}?></p>
                             </div>
                             <div class = "col-lg-6 col-md-6 col-sm-12">
                                 <p>Year of Death: <?php if (isset($residentDataArray['burials_death_year']) && $residentDataArray['burials_death_year'] > 0){echo $residentDataArray['burials_death_year'];}?></p>
@@ -150,7 +150,7 @@
                 <h3>Internment</h3>
                     <div class = "row">
                             <div class = "col-lg-6 col-md-6 col-sm-12">
-                                <p>Date Of Internment: <?php if (isset($residentDataArray['burials_interment_date']) && !$residentDataArray['burials_interment_date']  === '0000-00-00'){echo $residentDataArray['burials_interment_date'];}?></p>
+                                <p>Date Of Internment: <?php if (isset($residentDataArray['burials_interment_date']) && $residentDataArray['burials_interment_date']  != '0000-00-00'){echo $residentDataArray['burials_interment_date'];}?></p>
                             </div>
                             <div class = "col-lg-6 col-md-6 col-sm-12">
                                 <p>Year of Internment: <?php if (isset($residentDataArray['burials_interment_year']) && $residentDataArray['burials_interment_year'] > 0){echo $residentDataArray['burials_interment_year'];}?></p>

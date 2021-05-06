@@ -66,15 +66,15 @@ class Residents {
         $dataArray['burials_middle_name']=filter_var($dataArray['burials_middle_name'],FILTER_SANITIZE_STRING);
         $dataArray['burials_last_name']=filter_var($dataArray['burials_last_name'],FILTER_SANITIZE_STRING);
         // $dataArray['burials_dob']=filter_var($dataArray['burials_dob'],FILTER_SANITIZE_ENCODED); 
-        $dataArray['burials_birth_year']=filter_var($dataArray['burials_birth_year'],FILTER_VALIDATE_INT);
+        $dataArray['burials_birth_year']=filter_var($dataArray['burials_birth_year'],FILTER_SANITIZE_STRING);
         $dataArray['burials_birthplace_city']=filter_var($dataArray['burials_birthplace_city'],FILTER_SANITIZE_STRING);
         $dataArray['burials_birthplace_state']=filter_var($dataArray['burials_birthplace_state'],FILTER_SANITIZE_STRING);
         // $dataArray['burials_date_of_death']=filter_var($dataArray['burials_date_of_death'],FILTER_SANITIZE_ENCODED); 
-        $dataArray['burials_death_year']=filter_var($dataArray['burials_death_year'],FILTER_VALIDATE_INT);
-        $dataArray['burials_plot_row']=filter_var($dataArray['burials_plot_row'],FILTER_VALIDATE_INT);
-        $dataArray['burials_plot_number']=filter_var($dataArray['burials_plot_number'],FILTER_VALIDATE_INT);
+        $dataArray['burials_death_year']=filter_var($dataArray['burials_death_year'],FILTER_SANITIZE_STRING);
+        $dataArray['burials_plot_row']=filter_var($dataArray['burials_plot_row'],FILTER_SANITIZE_STRING);
+        $dataArray['burials_plot_number']=filter_var($dataArray['burials_plot_number'],FILTER_SANITIZE_STRING);
         // $dataArray['burials_interment_date']=filter_var($dataArray['burials_interment_date'],FILTER_SANITIZE_ENCODED); 
-        $dataArray['burials_interment_year']=filter_var($dataArray['burials_interment_year'],FILTER_VALIDATE_INT);
+        $dataArray['burials_interment_year']=filter_var($dataArray['burials_interment_year'],FILTER_SANITIZE_STRING);
         $dataArray['burials_veteran']=filter_var($dataArray['burials_veteran'],FILTER_SANITIZE_STRING);
         $dataArray['burials_veteran_branch']=filter_var($dataArray['burials_veteran_branch'],FILTER_SANITIZE_STRING);
         $dataArray['burials_veteran_rank']=filter_var($dataArray['burials_veteran_rank'],FILTER_SANITIZE_STRING);
@@ -446,6 +446,7 @@ class Residents {
                     }
                 }
             //burials_birth_year
+                
                 if (!empty($this->residentData['burials_birth_year'])){
                     if (preg_match($regex, $this->residentData['burials_birth_year'])){
                         //special characters found

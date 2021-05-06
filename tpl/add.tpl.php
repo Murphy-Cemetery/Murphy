@@ -165,7 +165,7 @@
 		}
 		function bodyInit(){
 			
-			var vetActive = <?php if (isset($residentDataArray['burials_veteran']) && $residentDataArray['burials_veteran'] === 'tru'){
+			<?php if (isset($residentDataArray['burials_veteran']) && $residentDataArray['burials_veteran'] === 'tru'){
 				echo "veteranClick(true);";
 			}else {
 				echo "veteranClick(false);";}?>

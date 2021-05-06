@@ -42,6 +42,7 @@ if (isset($_POST['Save'])) {
     $resident->set($residentDataArray);
 
     // pass the array into our instance
+    //echo $_POST['burials_birth_year'];
     if ($resident->validate()) {
         
         // save
