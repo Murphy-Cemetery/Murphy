@@ -74,6 +74,7 @@
                 if ($_SESSION['validUser']) { ?>
                     <div id="logout">
                         <button><a href="../public/logout.php">Logout of system</a></button>
+                        <button><a href="../public/add.php">Add a resident</a></button>
                     </div>
             <?php }} ?>
 
