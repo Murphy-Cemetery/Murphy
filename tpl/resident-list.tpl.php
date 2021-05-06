@@ -72,11 +72,14 @@
             <h3>Last Name:<?php if(isset($residentData['burials_last_name'])) echo ($residentData['burials_last_name'].' ');?></h3>
             <h3>Day of Death:<?php if(isset($residentData['burials_date_of_death'])) echo ($residentData['burials_date_of_death'].' ');?></h3>
 
-            <?php  if (isset($_SESSION['validUser'])) { 
-                        if ($_SESSION['validUser']) { ?>
-                            <p><button><a href="add.php?burialsID=<?php echo $residentData['burials_id']; ?>">Edit</a></button>
-                            <button><a href="resident-delete.php?deleteID=<?php echo $residentData['burials_id']; ?>">Delete</a></button></p>
-                    <?php }} ?>
+            <p>
+                <button><a href="resident-view.php?burialsID=<?php echo $residentData['burials_id']; ?>">View</a></button>
+                <?php  if (isset($_SESSION['validUser'])) { 
+                            if ($_SESSION['validUser']) { ?>
+                                <button><a href="add.php?burialsID=<?php echo $residentData['burials_id']; ?>">Edit</a></button>
+                                <button><a href="resident-delete.php?deleteID=<?php echo $residentData['burials_id']; ?>">Delete</a></button>
+                        <?php }} ?>
+            </p>
         </div> 
     <?php } ?>
     <p class="center"><a href="../tpl/search.tpl.php" id="deleted">Back to Search</a></p>
