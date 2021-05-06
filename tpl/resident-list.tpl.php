@@ -9,6 +9,14 @@
     <link href="../public/css/about.css" rel="stylesheet" type="text/css">
     <title>Search results</title>
     <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content:space-between;
+        }
         h1 {
         padding:2em;
         background-color:#444549;
@@ -29,6 +37,7 @@
         }
     </style>
 <body>
+<div>
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
 
         <a class="navbar-brand col-9 ml-3" href="../index.html"><span class="navWhiteHead">Murphy Cemetery</span></a>
@@ -83,7 +92,7 @@
         </div> 
     <?php } ?>
     <p class="center"><a href="../tpl/search.tpl.php" id="deleted">Back to Search</a></p>
-
+</div>
     <footer>
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12 mb-2 mt-2">
